@@ -148,7 +148,6 @@ namespace Lab_3
         }
         public void VerProductos()
         {
-
             for (int i = 0; i < Listaproductosoficial.Count; i++)
                 Console.WriteLine(Listaproductosoficial[i].InformacionProductos());
         }
@@ -248,13 +247,15 @@ namespace Lab_3
                 Listaproductosoficial[n].Stock -= cantidad;
                 cantidadcompra -= 1;
             }
+
             int r = rnd.Next(0, Listaclientesoficial.Count);
+            DateTime fecha = DateTime.Now;
             string nombrecliente = Listaclientesoficial[r].Nombre;
             r = rnd.Next(0, ListaCajerosoficial.Count);
             string nombrecajero = ListaCajerosoficial[r].Nombre;
-            string fecha = "null";
-            string hora = "null";
-            compras.Add(new Compra(hora, fecha, nombrecliente, nombrecajero, ListadeCompra));
+            string fechas = fecha.ToShortDateString().ToString();
+            string horas = fecha.ToShortTimeString().ToString();
+            compras.Add(new Compra(horas, fechas, nombrecliente, nombrecajero, ListadeCompra));
         }   
         public void VerComprass()
         {
@@ -269,6 +270,6 @@ namespace Lab_3
                 }
                 Console.WriteLine("\n");
             }     
-        }
+        }       
     }
 }

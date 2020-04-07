@@ -30,16 +30,5 @@ namespace Lab_3
             }
             return info;
         }
-
-
-
-
-
-
-
-
-
-
-
     }
 }

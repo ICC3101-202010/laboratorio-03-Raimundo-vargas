@@ -9,7 +9,6 @@ namespace Lab_3
         public List<Producto> Listaproductos = new List<Producto>();
         public List<Clientes> Listaclientes = new List<Clientes>();
         public List<Trabajadores> ListaTrabajadores = new List<Trabajadores>();
-        public List<Producto> ListadeCompra = new List<Producto>();
         public List<Compra> compras = new List<Compra>();      
         public Supermercado()
         {
@@ -75,42 +74,44 @@ namespace Lab_3
         }
         public void BolsadeCompra()
         {
-            Console.WriteLine("\nIngrese Nombre del Producto:");
-            string nombreproducto = Console.ReadLine();
-            Console.WriteLine("\nIngrese Cantidad del Producto a comprar:");
-            int cantidad = int.Parse(Console.ReadLine());
-            for (int i = 0; i < Listaproductos.Count; i++)
+            List<Producto> ListadeCompra = new List<Producto>();
+            string s = "s";
+            while (s == "s")
             {
-                if (Listaproductos[i].Nombre == nombreproducto)
+                Console.WriteLine("\nIngrese Nombre del Producto:");
+                string nombreproducto = Console.ReadLine();
+                Console.WriteLine("\nIngrese Cantidad del Producto a comprar:");
+                int cantidad = int.Parse(Console.ReadLine());
+                for (int i = 0; i < Listaproductos.Count; i++)
                 {
-                    if ((Listaproductos[i].Stock) >= cantidad)
+                    if (Listaproductos[i].Nombre == nombreproducto)
                     {
-                        Listaproductos[i].Stock = Listaproductos[i].Stock - cantidad;
-                        ListadeCompra.Add(Listaproductos[i]);
+                        if ((Listaproductos[i].Stock) >= cantidad)
+                        {
+                            Listaproductos[i].Stock = Listaproductos[i].Stock - cantidad;                         
+                            ListadeCompra.Add(new Producto (Listaproductos[i].Nombre,Listaproductos[i].Precio,Listaproductos[i].Marca,cantidad));                         
+                        }
+                        else
+                        {
+                            Console.WriteLine("No se puede comprar esta cantidad de este producto, Puede comprar maximo: " + Listaproductos[i].Stock);
+                            break;
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("No se puede comprar esta cantidad de este producto, Puede comprar maximo: "+ Listaproductos[i].Stock);
+                        Console.WriteLine("Este producto no existe");
                         break;
                     }
-                }
-                else
-                {
-                    Console.WriteLine("Este producto no existe");
-                    break;
-                }
-
+                    Console.WriteLine("Desea seguir agregando productos a la blosa?(si = s/ no = ingresa cualquier valor)");
+                s = Console.ReadLine();
+                }           
             }
-        }
-        public void Comprar()
-        {
-            ListadeCompra.Clear();
             string problema = "";
             Console.WriteLine("cual es el nombre del cliente que compra?");
             string nombrecliente = Console.ReadLine();
             for (int i = 0; i < Listaclientes.Count; i++)
             {
-                if (Listaclientes[i].Nombre==nombrecliente)
+                if (Listaclientes[i].Nombre == nombrecliente)
                 {
                     continue;
                 }
@@ -118,11 +119,11 @@ namespace Lab_3
                 {
                     problema += "El nombre de cliente no se encuentra en la lista de nombres";
                     break;
-                }               
+                }
             }
             Console.WriteLine("cual es el nombre del cajero que atiende?");
             string nombrecajero = Console.ReadLine();
-            for (int i = 0; i < Listaproductos.Count; i++)
+            for (int i = 0; i < ListaTrabajadores.Count; i++)
             {
                 if (ListaTrabajadores[i].Nombre == nombrecajero && ListaTrabajadores[i].puesto == "cajero")
                 {
@@ -138,16 +139,16 @@ namespace Lab_3
             string fecha = Console.ReadLine();
             Console.WriteLine("\nIngrese Hora de compra:");
             string hora = Console.ReadLine();
-            
-            if (problema=="")
+            if (problema == "")
             {
-                compras.Add(new Compra(hora,fecha,nombrecliente,nombrecajero,ListadeCompra));
+                compras.Add(new Compra(hora, fecha, nombrecliente, nombrecajero, ListadeCompra));
             }
             else
             {
                 Console.WriteLine(problema);
             }
         }
+        
         public void VerTrabajadores()
         {
             if (ListaTrabajadores.Count > 0)

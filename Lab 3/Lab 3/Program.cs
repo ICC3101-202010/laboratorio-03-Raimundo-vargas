@@ -58,15 +58,8 @@ namespace Lab_3
                     }
                 }
                 else if (quehacer == "4")
-                {
-                    s = "s";
-                    while (s == "s")
-                    {
-                        interaccion.BolsadeCompra();
-                        Console.WriteLine("Desea seguir agregando productos a la blosa?(si = s/ no = ingresa cualquier valor)");
-                        s = Console.ReadLine();
-                    }
-                    interaccion.Comprar();
+                {                    
+                    interaccion.BolsadeCompra();
                 }
                 else if (quehacer=="5")
                 {
@@ -101,6 +94,8 @@ namespace Lab_3
                     Console.WriteLine("\nEjecutando Simulacion Aleatoria...\n");               
                     Simulacion inicio = new Simulacion();
                     inicio.HacerListadeProductos();
+                    Console.WriteLine("Productos:");
+                    inicio.VerProductos();
                     inicio.HacerListadeClientes();
                     inicio.HacerListadeJefes();
                     inicio.HacerListadeSupervisores();
@@ -111,9 +106,7 @@ namespace Lab_3
                     {
                         inicio.BolsadeCompra();
                         n += 1;
-                    }
-                    Console.WriteLine("Productos:");
-                    inicio.VerProductos();
+                    }                   
                     Thread.Sleep(1000);
                     Console.WriteLine("\nClientes:");
                     inicio.VerClientes();
@@ -125,6 +118,10 @@ namespace Lab_3
                     inicio.VerCajero();
                     Thread.Sleep(1000);
                     inicio.VerComprass();
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Stock actualizado:\n");
+                    inicio.VerProductos();
+                    Console.WriteLine("\nSIMULACION TERMINADA");
                 }
                 else if (quehacer == "13")
                 {
