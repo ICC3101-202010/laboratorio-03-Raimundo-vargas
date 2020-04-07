@@ -9,11 +9,10 @@ namespace Lab_3
         {
             Supermercado interaccion = new Supermercado();
             string e = "";
-            Console.WriteLine("Bienvenido, Que desea hacer?");
             while (e=="")
 
             {
-                Console.WriteLine("1. Crear Trabajadores");
+                Console.WriteLine("\n1. Crear Trabajadores");
                 Console.WriteLine("2. Crear Cliente");
                 Console.WriteLine("3. Crear Producto");
                 Console.WriteLine("4. Hacer Compra");
@@ -100,11 +99,24 @@ namespace Lab_3
                 else if (quehacer == "12")
                 {
                     Console.WriteLine("\nEjecutando Simulacion Aleatoria...\n");
-                    Console.WriteLine("Productos:");
+                    
                     Simulacion inicio = new Simulacion();
+                    inicio.HacerListadeProductos();
+                    inicio.HacerListadeClientes();
+                    inicio.HacerListadeJefes();
+                    inicio.HacerListadeSupervisores();
+                    inicio.HacerListadeAuxiliares();
+                    inicio.HacerListadeCajeros();
+
+                    Console.WriteLine("Productos:");
                     inicio.VerProductos();
                     Console.WriteLine("\nClientes:");
-                    Console.WriteLine("Clientes:");
+                    inicio.VerClientes();
+                    Console.WriteLine("\nTrabajadores:");
+                    inicio.VerJefe();
+                    inicio.VerSupervisor();
+                    inicio.VerAuxiliares();
+                    inicio.VerCajero();
                 }
                 else if (quehacer == "13")
                 {

@@ -14,7 +14,7 @@ namespace Lab_3
         
         public Supermercado()
         {
-            Console.WriteLine("hola");
+            Console.WriteLine("Bienvenido, Que desea hacer?");
         }
         public void CrearProductos()
         {
