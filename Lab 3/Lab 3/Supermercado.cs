@@ -126,6 +126,7 @@ namespace Lab_3
 
         public void Comprar()
         {
+            ListadeCompra.Clear();
             string problema = "";
             Console.WriteLine("cual es el nombre del cliente que compra?");
             string nombrecliente = Console.ReadLine();

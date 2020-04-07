@@ -20,6 +20,8 @@ namespace Lab_3
         public List<Trabajadores> ListaAuxiliaresoficial = new List<Trabajadores>();
         public List<Trabajadores> ListaSupervisores = new List<Trabajadores>();
         public List<Trabajadores> ListaSupervisoresoficial = new List<Trabajadores>();
+
+        public List<Compra> compras = new List<Compra>();
         public Simulacion()
         {
             Listaproductos.Add(new Producto("Arroz", "990", "Miraflores", 500));
@@ -86,13 +88,13 @@ namespace Lab_3
             Listaclientes.Add(new Clientes("20284156-2", "Cecilia", "Vargas", "27/02/1992", "Aleman"));
 
             //1 Jefe
-            ListaJefes.Add(new Trabajadores("10284158-2", "Cecilia", "Suarez", "20/03/1992", "Chileno", "Jefe","1.000.000","8:00-19:00"));
+            ListaJefes.Add(new Trabajadores("10284158-2", "Cecilia", "Suarez", "20/03/1992", "Chileno", "Jefe", "1.000.000", "8:00-19:00"));
             ListaJefes.Add(new Trabajadores("20234156-3", "Francisca", "Vargas", "27/02/1992", "Chileno", "Jefe", "1.000.000", "8:00-19:00"));
             ListaJefes.Add(new Trabajadores("10285156-4", "Raimundo", "Ale", "27/05/1991", "Chileno", "Jefe", "1.000.000", "8:00-19:00"));
             ListaJefes.Add(new Trabajadores("26284156-5", "Rodrigo", "Vergara", "17/02/1998", "Chileno", "Jefe", "1.000.000", "8:00-19:00"));
             ListaJefes.Add(new Trabajadores("20285856-6", "Felipe", "Pinilla", "06/05/1992", "Chileno", "Jefe", "1.000.000", "8:00-19:00"));
-            
-            
+
+
             //2 auxiliares
             ListaAuxiliares.Add(new Trabajadores("10235856-1", "Felipe", "Urzua", "06/05/1982", "Chileno", "Auxiliar", "500.000", "8:00-19:00"));
             ListaAuxiliares.Add(new Trabajadores("20285656-2", "Martin", "Perez", "06/07/1993", "Chileno", "Auxiliar", "500.000", "10:00-21:00"));
@@ -124,21 +126,21 @@ namespace Lab_3
         public void HacerListadeProductos()
         {
             int numero = 0;
-            while(numero<30)
+            while (numero < 30)
             {
                 Random rnd = new Random();
                 int a = rnd.Next(0, Listaproductos.Count);
                 Listaproductosoficial.Add(Listaproductos[a]);
                 Listaproductos.Remove(Listaproductos[a]);
-                numero += 1;   
+                numero += 1;
             }
-            
+
         }
 
 
         public void VerProductos()
         {
-           
+
             for (int i = 0; i < Listaproductosoficial.Count; i++)
                 Console.WriteLine(Listaproductosoficial[i].InformacionProductos());
         }
@@ -164,7 +166,7 @@ namespace Lab_3
         }
         public void HacerListadeJefes()
         {
-            
+
             Random rnd = new Random();
             int a = rnd.Next(0, ListaJefes.Count);
             ListaJefesoficial.Add(ListaJefes[a]);
@@ -182,7 +184,7 @@ namespace Lab_3
             Random rnd = new Random();
             int a = rnd.Next(0, ListaSupervisores.Count);
             ListaSupervisoresoficial.Add(ListaSupervisores[a]);
-            ListaSupervisores.Remove(ListaJefes[a]);
+            ListaSupervisores.Remove(ListaSupervisores[a]);
         }
         public void VerSupervisor()
         {
@@ -230,9 +232,42 @@ namespace Lab_3
         }
 
 
+        public void BolsadeCompra()
+        {
+            List<Producto> ListadeCompra = new List<Producto>();
+            Random rnd = new Random();
+            int cantidadcompra = rnd.Next(0, Listaproductosoficial.Count);
+            while (cantidadcompra > 0)
+            {
+                int n = rnd.Next(0, Listaproductosoficial.Count);
+                int cantidad = rnd.Next(0, Listaproductosoficial[n].Stock); ;
+                ListadeCompra.Add(Listaproductosoficial[n]);
+                Listaproductosoficial[n].Stock -= cantidad;
+                cantidadcompra -= 1;
+            }
+            int r = rnd.Next(0, Listaclientesoficial.Count);
+            string nombrecliente = Listaclientesoficial[r].Nombre;
+            r = rnd.Next(0, ListaCajerosoficial.Count);
+            string nombrecajero = ListaCajerosoficial[r].Nombre;
+            string fecha = "null";
+            string hora = "null";
+            compras.Add(new Compra(hora, fecha, nombrecliente, nombrecajero, ListadeCompra));
+        }
 
-
-
-
+        
+        public void VerComprass()
+        {
+            if (compras.Count > 0)
+            {
+                
+                for (int i = 0; i < compras.Count; i++)
+                {
+                    Console.WriteLine("\nDetalle Compra n" + (i+1)+"\n");
+                    Console.WriteLine(compras[i].InformacionCompra());
+                }
+                Console.WriteLine("\n");
+            }
+            
+        }
     }
 }

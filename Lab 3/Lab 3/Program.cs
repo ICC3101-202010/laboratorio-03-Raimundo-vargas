@@ -107,6 +107,12 @@ namespace Lab_3
                     inicio.HacerListadeSupervisores();
                     inicio.HacerListadeAuxiliares();
                     inicio.HacerListadeCajeros();
+                    int n = 0;
+                    while(n<5)
+                    {
+                        inicio.BolsadeCompra();
+                        n += 1;
+                    }
 
                     Console.WriteLine("Productos:");
                     inicio.VerProductos();
@@ -117,6 +123,7 @@ namespace Lab_3
                     inicio.VerSupervisor();
                     inicio.VerAuxiliares();
                     inicio.VerCajero();
+                    inicio.VerComprass();
                 }
                 else if (quehacer == "13")
                 {

@@ -28,6 +28,7 @@ namespace Lab_3
             for(int i = 0; i < nuevascompras.Count; i++)
             {
                 info += nuevascompras[i].InformacionProductos();
+                info += "\n";
             }
             return info;
         }
