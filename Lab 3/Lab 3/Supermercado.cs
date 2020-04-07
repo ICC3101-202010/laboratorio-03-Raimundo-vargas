@@ -10,8 +10,7 @@ namespace Lab_3
         public List<Clientes> Listaclientes = new List<Clientes>();
         public List<Trabajadores> ListaTrabajadores = new List<Trabajadores>();
         public List<Producto> ListadeCompra = new List<Producto>();
-        public List<Compra> compras = new List<Compra>();
-        
+        public List<Compra> compras = new List<Compra>();      
         public Supermercado()
         {
             Console.WriteLine("Bienvenido, Que desea hacer?");
@@ -32,51 +31,35 @@ namespace Lab_3
         public void CrearCliente()
         {
             Console.WriteLine("Crear Cliente:");
-
             Console.WriteLine("\nIngrese Rut del Cliente:");
             string rutcliente = Console.ReadLine();
-
             Console.WriteLine("\nIngrese Nombre del Cliente:");
             string nombrecliente = Console.ReadLine();
-
             Console.WriteLine("\nIngrese Apellido del Cliente:");
             string apellidocliente = Console.ReadLine();
-
             Console.WriteLine("\nIngrese Nacionalidad del Cliente:");
             string nacionalidadcliente = Console.ReadLine();
-
             Console.WriteLine("\nIngrese Fecha de nacimiento del Cliente:");
             string fechanacimientocliente = Console.ReadLine();
-
-            Listaclientes.Add( new Clientes(rutcliente, nombrecliente, apellidocliente, fechanacimientocliente, nacionalidadcliente));
-
-            
+            Listaclientes.Add( new Clientes(rutcliente, nombrecliente, apellidocliente, fechanacimientocliente, nacionalidadcliente));           
         }
         public void CrearTrabajador()
         {
             Console.WriteLine("Crear Trabajador:");
-
             Console.WriteLine("\nIngrese Rut del Trabajador:");
             string rutTrabajador = Console.ReadLine();
-
             Console.WriteLine("\nIngrese Nombre del Trabajador:");
             string nombreTrabajador = Console.ReadLine();
-
             Console.WriteLine("\nIngrese Apellido del Trabajador:");
             string apellidoTrabajador = Console.ReadLine();
-
             Console.WriteLine("\nIngrese Nacionalidad del Trabajador:");
             string nacionalidadTrabajador = Console.ReadLine();
-
             Console.WriteLine("\nIngrese Fecha de nacimiento del Trabajador:");
             string fechanacimientoTrabajador = Console.ReadLine();
-
             Console.WriteLine("\nIngrese puesto del Trabajador (cajero / supervisor / auxiliar / jefe)");
             string puestoTrabajador = Console.ReadLine();
-
             Console.WriteLine("\nIngrese sueldo del Trabajador:");
             string sueldoTrabajador = Console.ReadLine();
-
             Console.WriteLine("\nIngrese horario del Trabajador:");
             string horario = Console.ReadLine();
             if (puestoTrabajador == "cajero" || puestoTrabajador == "supervisor" || puestoTrabajador == "jefe" || puestoTrabajador == "auxiliar")
@@ -88,12 +71,8 @@ namespace Lab_3
             else
             {
                 Console.WriteLine("a ingresado un puesto de trabajo erroneo");
-
-            }
-         
-
+            }        
         }
-
         public void BolsadeCompra()
         {
             Console.WriteLine("\nIngrese Nombre del Producto:");
@@ -123,7 +102,6 @@ namespace Lab_3
 
             }
         }
-
         public void Comprar()
         {
             ListadeCompra.Clear();
@@ -140,8 +118,7 @@ namespace Lab_3
                 {
                     problema += "El nombre de cliente no se encuentra en la lista de nombres";
                     break;
-                }
-                   
+                }               
             }
             Console.WriteLine("cual es el nombre del cajero que atiende?");
             string nombrecajero = Console.ReadLine();
@@ -156,7 +133,6 @@ namespace Lab_3
                     problema += "\nEl nombre del cajero no se encuentra en la lista de nombres";
                     break;
                 }
-
             }
             Console.WriteLine("\nIngrese Fecha de compra:");
             string fecha = Console.ReadLine();
@@ -187,7 +163,6 @@ namespace Lab_3
             {
                 Console.WriteLine("\nNo hay trabajadores en la lista de trabajadores\n");
             }
-
         }
         public void VerClientes()
         {
@@ -262,13 +237,11 @@ namespace Lab_3
                     {
                         Console.WriteLine("Ese trabajador no existe");
                     }
-
             }
             else
             {
                 Console.WriteLine("\nNo hay Trabajadores en la lista de trabajadores.");
-            }
-            
+            }     
         }
         public void CambiarDeSueldo()
         {
@@ -284,7 +257,6 @@ namespace Lab_3
                         
                         ListaTrabajadores[i].sueldo = respuestasueldo;
                         Console.WriteLine("\nUsted ha cambiado el sueldo de forma efectiva. ");
-  
                     }
                     else
                     {
@@ -295,7 +267,6 @@ namespace Lab_3
             {
                 Console.WriteLine("\nNo hay Trabajadores en la lista de trabajadores.");
             }
-
         }
         public void CambiarHorario()
         {
@@ -320,7 +291,6 @@ namespace Lab_3
             {
                 Console.WriteLine("\nNo hay Trabajadores en la lista de trabajadores.");
             }
-
         }
     }
 }

@@ -11,7 +11,6 @@ namespace Lab_3
             Supermercado interaccion = new Supermercado();
             string e = "";
             while (e=="")
-
             {
                 Console.WriteLine("\n1. Crear Trabajadores");
                 Console.WriteLine("2. Crear Cliente");
@@ -99,8 +98,7 @@ namespace Lab_3
                 }
                 else if (quehacer == "12")
                 {
-                    Console.WriteLine("\nEjecutando Simulacion Aleatoria...\n");
-                    
+                    Console.WriteLine("\nEjecutando Simulacion Aleatoria...\n");               
                     Simulacion inicio = new Simulacion();
                     inicio.HacerListadeProductos();
                     inicio.HacerListadeClientes();
@@ -114,7 +112,6 @@ namespace Lab_3
                         inicio.BolsadeCompra();
                         n += 1;
                     }
-
                     Console.WriteLine("Productos:");
                     inicio.VerProductos();
                     Thread.Sleep(1000);
@@ -132,7 +129,11 @@ namespace Lab_3
                 else if (quehacer == "13")
                 {
                     e = "stop";
-                }               
+                }     
+                else
+                {
+                    Console.WriteLine("Valor ingresado no valido");
+                }
             }
         }
     }

@@ -11,7 +11,6 @@ namespace Lab_3
         public string NombreCliente;
         public string NombreCajero;
         public List<Producto> nuevascompras = new List<Producto>();
-        
         public Compra(string Horas, string Fechas, string NombreClientes, string NombreCajeros, List<Producto> nuevascomprass)
         {
             Hora = Horas;
@@ -23,8 +22,7 @@ namespace Lab_3
         public string InformacionCompra()
         {
             string info = (" Hora: " + Hora + "," + " Fecha: " + Fecha + "," 
-                + " Nombre Cliente: " + NombreCliente + "," + " Nombre Cajero: " + NombreCajero +"\nProductos comprados:\n");
-            
+                + " Nombre Cliente: " + NombreCliente + "," + " Nombre Cajero: " + NombreCajero +"\nProductos comprados:\n");       
             for(int i = 0; i < nuevascompras.Count; i++)
             {
                 info += nuevascompras[i].InformacionProductos();

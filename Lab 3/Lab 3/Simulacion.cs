@@ -21,7 +21,6 @@ namespace Lab_3
         public List<Trabajadores> ListaAuxiliaresoficial = new List<Trabajadores>();
         public List<Trabajadores> ListaSupervisores = new List<Trabajadores>();
         public List<Trabajadores> ListaSupervisoresoficial = new List<Trabajadores>();
-
         public List<Compra> compras = new List<Compra>();
         public Simulacion()
         {
@@ -54,28 +53,27 @@ namespace Lab_3
             Listaproductos.Add(new Producto("Vaso", "490", "Great Value", 115));
             Listaproductos.Add(new Producto("Confort", "5.990", "Elite", 500));
             Listaproductos.Add(new Producto("Alchol Gel", "1.190", "Nexcare", 200));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
-
+            Listaproductos.Add(new Producto("Servilletas", "690", " Elite", 250));
+            Listaproductos.Add(new Producto("Jugo", "690", "Wstts", 250));
+            Listaproductos.Add(new Producto("Pañales", "1890", "Bambi", 150));
+            Listaproductos.Add(new Producto("Cepillo de dientes", "1390", "Lider", 50));
+            Listaproductos.Add(new Producto("Pasta de dientes", "490", "Colgate", 50));
+            Listaproductos.Add(new Producto("Afeitadora", "990", "Gilette", 50));
+            Listaproductos.Add(new Producto("Limon", "1990", "Frutas", 80));
+            Listaproductos.Add(new Producto("Palta", "2990", "Frutas", 90));
+            Listaproductos.Add(new Producto("Chorizo", "4590", "Don Jorge", 30));
+            Listaproductos.Add(new Producto("Pan", "1690", "Bimbo", 80));
+            Listaproductos.Add(new Producto("Azucar", "590", "Iansa", 60));
+            Listaproductos.Add(new Producto("Harina", "790", "Lider", 80));
+            Listaproductos.Add(new Producto("Chicles", "490", "Orbitz", 150));
+            Listaproductos.Add(new Producto("Taza", "390", "Lider", 20));
+            Listaproductos.Add(new Producto("Pilas AA", "2390", "Duracel", 150));
+            Listaproductos.Add(new Producto("Lapices", "790", "Color", 550));
+            Listaproductos.Add(new Producto("Plumon", "1190", "Faber Castel", 350));
+            Listaproductos.Add(new Producto("Hojas", "4990", "Lider", 150));
+            Listaproductos.Add(new Producto("Tv", "150000", "Samsung", 20));
+            Listaproductos.Add(new Producto("Refrigerador", "180000", "Samsung", 10));
+            Listaproductos.Add(new Producto("Batidora", "30000", "Samsung", 40));
             Listaclientes.Add(new Clientes("20254056-6", "Raimundo", "Vargas", "11/08/1999", "Chileno"));
             Listaclientes.Add(new Clientes("10264056-7", "Felipe", "Alcalde", "05/12/1989", "Chileno"));
             Listaclientes.Add(new Clientes("20248556-8", "Francisco", "Fernandez", "12/11/1968", "Chileno"));
@@ -107,31 +105,22 @@ namespace Lab_3
             Listaclientes.Add(new Clientes("20284856-k", "Elisa", "Gana", "22/11/1988", "Estadounidense"));
             Listaclientes.Add(new Clientes("10284956-1", "Vanessa", "Chamas", "21/08/1973", "Frances"));
             Listaclientes.Add(new Clientes("20284156-2", "Cecilia", "Vargas", "27/02/1992", "Aleman"));
-
-            //1 Jefe
             ListaJefes.Add(new Trabajadores("10284158-2", "Cecilia", "Suarez", "20/03/1992", "Chileno", "Jefe", "1.000.000", "8:00-19:00"));
             ListaJefes.Add(new Trabajadores("20234156-3", "Francisca", "Vargas", "27/02/1992", "Chileno", "Jefe", "1.000.000", "8:00-19:00"));
             ListaJefes.Add(new Trabajadores("10285156-4", "Raimundo", "Ale", "27/05/1991", "Chileno", "Jefe", "1.000.000", "8:00-19:00"));
             ListaJefes.Add(new Trabajadores("26284156-5", "Rodrigo", "Vergara", "17/02/1998", "Chileno", "Jefe", "1.000.000", "8:00-19:00"));
             ListaJefes.Add(new Trabajadores("20285856-6", "Felipe", "Pinilla", "06/05/1992", "Chileno", "Jefe", "1.000.000", "8:00-19:00"));
-
-
-            //2 auxiliares
             ListaAuxiliares.Add(new Trabajadores("10235856-1", "Felipe", "Urzua", "06/05/1982", "Chileno", "Auxiliar", "500.000", "8:00-19:00"));
             ListaAuxiliares.Add(new Trabajadores("20285656-2", "Martin", "Perez", "06/07/1993", "Chileno", "Auxiliar", "500.000", "10:00-21:00"));
             ListaAuxiliares.Add(new Trabajadores("10285856-k", "Meliton", "Soto", "16/05/1972", "Chileno", "Auxiliar", "500.000", "8:00-19:00"));
             ListaAuxiliares.Add(new Trabajadores("20289856-3", "Sergio", "Moreno", "08/08/1992", "Chileno", "Auxiliar", "500.000", "10:00-21:00"));
             ListaAuxiliares.Add(new Trabajadores("10285956-4", "Paulina", "Piñera", "24/05/1998", "Chileno", "Auxiliar", "500.000", "8:00-19:00"));
             ListaAuxiliares.Add(new Trabajadores("20285856-5", "Yoselin", "Errazuriz", "13/07/1990", "Chileno", "Auxiliar", "500.000", "10:00-21:00"));
-
-            //1 supervisor
             ListaSupervisores.Add(new Trabajadores("10285866-1", "Rodrigo", "Valenzuela", "06/0/1991", "Chileno", "Supervisor", "600.000", "8:00-19:00"));
             ListaSupervisores.Add(new Trabajadores("20286856-2", "Maximiliano", "Grogean", "07/02/1992", "Chileno", "Supervisor", "600.000", "10:00-21:00"));
             ListaSupervisores.Add(new Trabajadores("11285856-3", "Carla", "Hamilton", "08/03/1993", "Chileno", "Supervisor", "600.000", "8:00-19:00"));
             ListaSupervisores.Add(new Trabajadores("20255856-4", "Carolina", "Verstappen", "09/04/1994", "Espanol", "Supervisor", "600.000", "10:00-21:00"));
             ListaSupervisores.Add(new Trabajadores("10285856-5", "Pascual", "Ricciardo", "10/05/1995", "Chileno", "Supervisor", "600.000", "8:00-19:00"));
-
-            //3 cajeros
             ListaCajeros.Add(new Trabajadores("10285856-6", "Brayan", "Recabarren", "11/06/1996", "Chileno", "Cajero", "500.000", "8:00-19:00"));
             ListaCajeros.Add(new Trabajadores("20268756-7", "Jhonatan", "Anguita", "12/07/1997", "Chileno", "Cajero", "500.000", "8:00-19:00"));
             ListaCajeros.Add(new Trabajadores("10295856-8", "Elopoldo", "Ibanez", "12/08/1998", "Chileno", "Cajero", "500.000", "8:00-19:00"));
@@ -157,15 +146,12 @@ namespace Lab_3
             }
 
         }
-
-
         public void VerProductos()
         {
 
             for (int i = 0; i < Listaproductosoficial.Count; i++)
                 Console.WriteLine(Listaproductosoficial[i].InformacionProductos());
         }
-
         public void HacerListadeClientes()
         {
             int numero = 0;
@@ -177,7 +163,6 @@ namespace Lab_3
                 Listaclientes.Remove(Listaclientes[a]);
                 numero += 1;
             }
-
         }
         public void VerClientes()
         {
@@ -234,7 +219,6 @@ namespace Lab_3
         }
         public void HacerListadeCajeros()
         {
-
             int numero = 0;
             while (numero < 3)
             {
@@ -251,8 +235,6 @@ namespace Lab_3
             for (int i = 0; i < ListaCajerosoficial.Count; i++)
                 Console.WriteLine(ListaCajerosoficial[i].Informaciontrabajadores());
         }
-
-
         public void BolsadeCompra()
         {
             List<Producto> ListadeCompra = new List<Producto>();
@@ -273,9 +255,7 @@ namespace Lab_3
             string fecha = "null";
             string hora = "null";
             compras.Add(new Compra(hora, fecha, nombrecliente, nombrecajero, ListadeCompra));
-        }
-
-        
+        }   
         public void VerComprass()
         {
             if (compras.Count > 0)
@@ -288,8 +268,7 @@ namespace Lab_3
                     Thread.Sleep(1000);
                 }
                 Console.WriteLine("\n");
-            }
-            
+            }     
         }
     }
 }
