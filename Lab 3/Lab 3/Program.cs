@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 
 namespace Lab_3
@@ -116,13 +117,16 @@ namespace Lab_3
 
                     Console.WriteLine("Productos:");
                     inicio.VerProductos();
+                    Thread.Sleep(1000);
                     Console.WriteLine("\nClientes:");
                     inicio.VerClientes();
+                    Thread.Sleep(1000);
                     Console.WriteLine("\nTrabajadores:");
                     inicio.VerJefe();
                     inicio.VerSupervisor();
                     inicio.VerAuxiliares();
                     inicio.VerCajero();
+                    Thread.Sleep(1000);
                     inicio.VerComprass();
                 }
                 else if (quehacer == "13")

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Text;
 
@@ -53,6 +54,26 @@ namespace Lab_3
             Listaproductos.Add(new Producto("Vaso", "490", "Great Value", 115));
             Listaproductos.Add(new Producto("Confort", "5.990", "Elite", 500));
             Listaproductos.Add(new Producto("Alchol Gel", "1.190", "Nexcare", 200));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
+            Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
             Listaproductos.Add(new Producto("Agua", "690", "Cachantun", 150));
 
             Listaclientes.Add(new Clientes("20254056-6", "Raimundo", "Vargas", "11/08/1999", "Chileno"));
@@ -264,6 +285,7 @@ namespace Lab_3
                 {
                     Console.WriteLine("\nDetalle Compra n" + (i+1)+"\n");
                     Console.WriteLine(compras[i].InformacionCompra());
+                    Thread.Sleep(1000);
                 }
                 Console.WriteLine("\n");
             }
